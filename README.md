@@ -1,5 +1,4 @@
 # Get Yukino Tweet
-==================
 
 ## overview
 Get the tweets of @ykn_1214 that are not stored in yukinoDB.
