@@ -21,17 +21,21 @@ req = twitter.get(url, params = params)
 if req.status_code == 200:
     tweet_list = json.loads(req.text)
 
-    for tweet in tweet_list:
-        week, month, day, time, _, year = tweet['created_at'].split()
+    if tweet_list == []:
+        print('The latest tweets have already been retrieved.')
 
-        print(tweet['text'])
-        print(f'{year}/{month}/{day}/{time}')
-        print()
+    else:        
+        for tweet in tweet_list:
+            week, month, day, time, _, year = tweet['created_at'].split()
 
-    latest_id_str = tweet_list[0]['id_str']
+            print(tweet['text'])
+            print(f'{year}/{month}/{day}/{time}')
+            print()
 
-    with open('since_id.txt', 'w') as f:
-        f.write(latest_id_str)
+        latest_id_str = tweet_list[0]['id_str']
+
+        with open('since_id.txt', 'w') as f:
+            f.write(latest_id_str)
 
 else:
     print(f'Faled: {req.status_code}')
