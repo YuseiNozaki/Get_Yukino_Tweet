@@ -22,7 +22,7 @@ if req.status_code == 200:
     tweet_list = json.loads(req.text)
 
     if tweet_list == []:
-        print('The latest tweets have already been retrieved.')
+        print('The latest tweet have already been retrieved.')
 
     else:        
         for tweet in tweet_list:
