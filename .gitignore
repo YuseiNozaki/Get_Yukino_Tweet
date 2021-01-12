@@ -7,3 +7,4 @@ config.py
 since_id.txt
 tweet_text.txt
 main.sh
+tmp.py
